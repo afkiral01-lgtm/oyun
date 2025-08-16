@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sisyphus</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Courier New', monospace;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        
+        #gameContainer {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: #000;
+        }
+        
+        #ui {
+            display: none; /* Hide the UI elements */
+        }
+        
+        .money-positive { color: #4ade80; }
+        .money-negative { color: #ef4444; }
+        .phase-pushing { color: #22c55e; }
+        .phase-rolling { color: #ef4444; }
+    </style>
+  <script type="module" crossorigin src="/oyun/assets/index-CKKsrtOJ.js"></script>
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="ui">
+            <div id="messages">
+                <div>Push the boulder of economic survival up the mountain</div>
+            </div>
+            <div id="stats">
+                <div>Money: $<span id="money" class="money-positive">0</span></div>
+                <div>Total Earned: $<span id="earned">0</span></div>
+                <div>Total Lost: $<span id="spent">0</span></div>
+                <div>Boulder Weight: <span id="weight">1.0</span></div>
+                <div>Height: <span id="height">0</span>m</div>
+                <div>Phase: <span id="phase" class="phase-pushing">PUSHING</span></div>
+                <div style="margin-top: 10px;">
+                    <div>Effort: <div style="background: #333; width: 150px; height: 8px; border-radius: 4px; display: inline-block; position: relative;">
+                        <div id="effortBar" style="background: #ffd700; height: 100%; width: 0%; border-radius: 4px; transition: width 0.1s;"></div>
+                    </div></div>
+                </div>
+            </div>
+            <div id="instructions">
+                HOLD SPACE to push the boulder • R to reset (costs $50) • The eternal economic struggle
+            </div>
+        </div>
+        <div id="app"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.70.0/phaser.min.js"></script>
+    
+</body>
+</html>
